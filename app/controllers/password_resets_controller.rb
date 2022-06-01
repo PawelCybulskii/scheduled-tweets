@@ -12,4 +12,8 @@ class PasswordResetsController < ApplicationController
     end
     redirect_to root_path, notice: "If an account with this email was found, we have sent link with reset password "
   end
+
+  def edit
+    @user = User.find_signed(params[:token], purpose: "password_reset")
+  end
 end
