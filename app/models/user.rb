@@ -6,6 +6,7 @@
 
 class User < ApplicationRecord
   has_many :twitter_accounts
+  has_many :tweets
 
   has_secure_password
 # line below validates for presence of e-mail address, what is relevant for further account finding
