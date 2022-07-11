@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class TwitterAccountsController < ApplicationController
   before_action :require_user_logged_in!
   before_action :set_twitter_account, only: [:destroy]
@@ -10,7 +12,7 @@ class TwitterAccountsController < ApplicationController
     @twitter_account.destroy
     redirect_to twitter_accounts_path, notice: "Successfully diconnected your @#{@twitter_account.username}"
   end
-  
+
   private
 
   def set_twitter_account
