@@ -21,7 +21,8 @@ class TweetsController < ApplicationController
     end
   end
 
-  def edit; end
+  def edit 
+  end
 
   def update
     if @tweet.update(tweet_params)
