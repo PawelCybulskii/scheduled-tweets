@@ -14,4 +14,10 @@ class Tweet < ApplicationRecord
   def published?
     tweet_id?
   end
+  # The bang (!) is there to demote that it's making api request and publishing something to a real twitter account
+
+  def publish_to_twitter!
+    tweet = twitter_account.client.update(body)
+    update(tweet_id: tweet.id)
+  end
 end
